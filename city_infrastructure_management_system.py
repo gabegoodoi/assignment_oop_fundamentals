@@ -25,8 +25,9 @@ class Vehicle:
         self.type = type
         self.owner = owner
 
-    def update_owner(new_owner):
-        self.owner = new_owner
+    def update_owner(self, other_vehicle):
+        self.owner = other_vehicle
+        return self.owner
 
 car1 = Vehicle('123456', '1967 Ford Mustang', 'Melanie')
 car2 = Vehicle('098765', '2015 Buick Encore', 'James')
@@ -38,6 +39,8 @@ print(f"{car2.owner} owned the {car2.type}")
 print(f"{car3.owner} owned the {car3.type}")
 
 car1.update_owner(car2.owner)
+car2.update_owner("Steve")
+car3.update_owner("DECEASED")
 
 print("\nNow:\n")
 print(f"{car1.owner} owns the {car1.type}")
